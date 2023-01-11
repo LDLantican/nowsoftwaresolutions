@@ -6,36 +6,14 @@ import Portfolio from "./pages/Portfolio";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import { NavLink, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About</NavLink>
-          </li>
-          <li>
-            <NavLink to="/services">Services</NavLink>
-          </li>
-          <li>
-            <NavLink to="/portfolio">Portfolio</NavLink>
-          </li>
-          <li>
-            <NavLink to="/team">Team</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
-          <li>
-            <a href="https://now.nowsoftwaresolutions.com/">Clients</a>
-          </li>
-        </ul>
-      </nav>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -45,6 +23,7 @@ function App() {
         <Route path="/team" element={<Team />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </>
   );
 }
