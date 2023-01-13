@@ -5,9 +5,13 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header>
-      <div className="site-navigation">
+      <div className="site-navigation max-w-[1200px] p-[1rem] ">
         <NavLink to="/">
-          <img src={NSSLogo} alt="NOW Software Solutions Logo" />
+          <img
+            className="max-w-[120px]"
+            src={NSSLogo}
+            alt="NOW Software Solutions Logo"
+          />
         </NavLink>
         <nav>
           <ul>
@@ -34,6 +38,10 @@ function Header() {
             </li>
           </ul>
         </nav>
+        <a href="tel:+13343445870">
+          <span>Call Anytime</span>
+          <span>334 344 5870</span>
+        </a>
       </div>
     </header>
   );
