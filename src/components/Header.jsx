@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <header>
-      <div className="site-navigation max-w-[1200px] p-[1rem] ">
+      <div className="max-w-[1200px] p-[1rem] ">
         <NavLink to="/">
           <img
             className="max-w-[120px]"
@@ -13,8 +13,16 @@ function Header() {
             alt="NOW Software Solutions Logo"
           />
         </NavLink>
-        <nav>
-          <ul>
+        <nav className="site-navigation">
+          <button
+            className="menu-toggle"
+            aria-controls="primary-navigation"
+            aria-expanded="false"
+          >
+            <span className="sr-only">Menu</span>
+          </button>
+
+          <ul className="primary-navigation" id="primary-navigation">
             <li>
               <NavLink to="/">Home</NavLink>
             </li>
