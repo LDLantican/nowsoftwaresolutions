@@ -30,3 +30,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+@media screen and (max-width: 768px) {
+  .show-menu {
+    visibility: hidden;
+  }
+  .hide-menu {
+    visibility: visible;
+  }
+}

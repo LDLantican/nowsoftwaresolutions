@@ -9,15 +9,15 @@ function Header() {
 
   return (
     <header className="relative w-full">
-      <div className="max-w-[1200px] mx-auto p-[0.5em] grid grid-cols-[minmax(120px,1fr)_1fr] justify-left items-center">
-        <NavLink to="/" className="max-w-[120px]">
+      <div className="max-w-[1200px] mx-auto grid grid-cols-[minmax(120px,1fr)_1fr] justify-items-stretch gap-[1rem]">
+        <NavLink to="/" className="max-w-[120px] p-[1rem]">
           <img
             className="w-full"
             src={NSSLogo}
             alt="NOW Software Solutions Logo"
           />
         </NavLink>
-        <nav className="site-navigation justify-self-end pr-[2em] isolate">
+        <nav className="site-navigation grid auto-rows-auto gap-[0.5rem] isolate">
           <button
             className="menu-toggle relative md:hidden text-[2.5rem] z-[2]"
             aria-controls="primary-navigation"
@@ -31,7 +31,9 @@ function Header() {
           </button>
 
           <ul
-            className="primary-navigation bg-red-900 absolute top-0 right-0 w-[50vw] min-h-[100vh] grid auto-rows-min justify-items-end gap-[1rem] pt-[6rem] pr-[2.5rem] z-[1] text-[1.25rem]"
+            className={`${
+              isShowing ? "show-menu" : "hide-menu"
+            } primary-navigation bg-red-900 `}
             id="primary-navigation"
           >
             <li>
