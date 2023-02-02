@@ -31,11 +31,41 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 768px) {
+.wrapper {
+  --max-width: 1200px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 50em) {
   .show-menu {
     visibility: hidden;
   }
   .hide-menu {
     visibility: visible;
   }
+}
+
+/* header */
+
+.header-nav {
+  display: grid;
+  grid-template-columns: 116px 1fr auto;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 50em) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
+#primary-navigation {
+  display: grid;
+  grid-auto-flow: column;
 }
