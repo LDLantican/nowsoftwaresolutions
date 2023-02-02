@@ -1,14 +1,18 @@
 import React from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
+import CustomSection from "../components/CustomSection";
+import HeroBG from "../assets/images/hero-bg.gif";
 
 function Home() {
   return (
     <>
-      <section className="hero-section | ">
+      <CustomSection backgroundImage={HeroBG}>
         <img src={NSSLogo} alt="NOW Software Solution Company Logo" />
-        <h1>Welcome</h1>
-        <a href="#">Discover More</a>
-      </section>
+        <h1 className="fs-900 text-neutral-100">Welcome</h1>
+        <a className="button" href="#">
+          Discover More
+        </a>
+      </CustomSection>
       <section>
         <h2>We shape the perfect solutions.</h2>
         <p>

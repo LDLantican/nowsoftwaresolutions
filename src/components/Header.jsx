@@ -3,23 +3,20 @@ import NSSLogo from "../assets/images/nss-logo.webp";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 
 function Header() {
   const [isShowing, setIsShowing] = useState(false);
 
   return (
-    <header className="main-header | relative w-full">
+    <header className="main-header absolute inset-x-0 top-0">
       <div className="wrapper ">
         <div className="header-nav">
           <NavLink to="/" className="">
-            <img
-              className="w-full"
-              src={NSSLogo}
-              alt="NOW Software Solutions Logo"
-            />
+            <img className="" src={NSSLogo} alt="NOW Software Solutions Logo" />
           </NavLink>
           <button
-            className="menu-toggle | text-[2.5rem]"
+            className="menu-toggle"
             aria-controls="primary-navigation"
             aria-expanded="false"
             onClick={() => {
@@ -29,8 +26,9 @@ function Header() {
             <span className="sr-only">Menu</span>
             <FontAwesomeIcon icon={faBars} />
           </button>
-          <nav className="site-navigation | isolate">
+          <nav className="site-navigation">
             <ul
+              role="list"
               className={`${
                 isShowing ? "show-menu" : "hide-menu"
               } primary-navigation`}
@@ -59,7 +57,7 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <a className="" href="tel:+13343445870">
+          <a className="header-cta" href="tel:+13343445870">
             <span>Call Anytime</span>
             <span>334 344 5870</span>
           </a>
