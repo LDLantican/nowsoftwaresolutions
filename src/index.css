@@ -12,6 +12,7 @@
   --ff-body: var(--ff-primary);
   --ff-heading: var(--ff-primary);
 
+  --fw-light: 300;
   --fw-regular: 400;
   --fw-semi-bold: 500;
   --fw-bold: 700;
@@ -134,6 +135,9 @@ svg {
 }
 .fw-regular {
   font-weight: var(--fw-regular);
+}
+.fw-light {
+  font-weight: var(--fw-light);
 }
 
 .fs-primary-heading {

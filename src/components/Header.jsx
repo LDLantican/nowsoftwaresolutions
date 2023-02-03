@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,14 +7,23 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 function Header() {
   const [isShowing, setIsShowing] = useState(false);
   const headerRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState(0);
+
+  useLayoutEffect(() => {
+    const image = new window.Image();
+    image.src = NSSLogo;
+    image.onload = () => {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    };
+  }, []);
 
   useEffect(() => {
-    const headerHeight = headerRef.current.offsetHeight;
     document.documentElement.style.setProperty(
       "--header-height",
       headerHeight + "px"
     );
-  }, []);
+    console.log(headerHeight);
+  }, [headerHeight]);
 
   return (
     <header ref={headerRef} className="main-header | absolute inset-x-0 top-0">
