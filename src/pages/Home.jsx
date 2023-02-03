@@ -2,48 +2,77 @@ import React from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import CustomSection from "../components/CustomSection";
 import HeroBG from "../assets/images/hero-bg.gif";
+import Section1 from "../assets/images/SectionBG-1.png";
 
 function Home() {
   return (
     <>
       <CustomSection backgroundImage={HeroBG}>
-        <img src={NSSLogo} alt="NOW Software Solution Company Logo" />
-        <h1 className="fs-900 text-neutral-100">Welcome</h1>
-        <a className="button" href="#">
-          Discover More
-        </a>
+        <div className="wrapper">
+          <img
+            src={NSSLogo}
+            className="max-w-[28.125rem]"
+            alt="NOW Software Solution Company Logo"
+          />
+          <h1 className="fs-900 text-neutral-100 uppercase">Welcome</h1>
+          <a className="button" href="#">
+            Discover More
+          </a>
+        </div>
       </CustomSection>
-      <section>
-        <h2>We shape the perfect solutions.</h2>
-        <p>
-          We are committed to providing our customers with exceptional service
-          while offering our employees the best training.
-        </p>
+      <CustomSection
+        backgroundImage={Section1}
+        className="bg-neutral-900 bg-blend-overlay text-neutral-100"
+      >
+        <div className="wrapper">
+          <h2 className="fs-primary-heading uppercase">
+            We shape the perfect solutions
+            <span className="text-primary-400 fw-bold">.</span>
+          </h2>
+          <p>
+            We are committed to providing our customers with exceptional service
+            while offering our employees the best training.
+          </p>
 
-        <ul>
-          <li>
-            <a href="#">Customer Relationship Management</a>
-          </li>
-          <li>
-            <a href="#">Campaign Creation and Management</a>
-          </li>
-          <li>
-            <a href="#">Web & App Development</a>
-          </li>
-          <li>
-            <a href="#">Content & Social Media Marketing</a>
-          </li>
-          <li>
-            <a href="#">Digital Marketing</a>
-          </li>
-          <li>
-            <a href="#">Brand Development</a>
-          </li>
-          <li>
-            <a href="#">SEO Services</a>
-          </li>
-        </ul>
-      </section>
+          <ul>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Customer Relationship Management
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Campaign Creation and Management
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Web & App Development
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Content & Social Media Marketing
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Digital Marketing
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                Brand Development
+              </a>
+            </li>
+            <li>
+              <a href="#" className="fs-secondary-heading">
+                SEO Services
+              </a>
+            </li>
+          </ul>
+        </div>
+      </CustomSection>
       <section>
         <h2>Industries we help grow with digital marketing.</h2>
         <p>

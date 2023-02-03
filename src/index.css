@@ -162,8 +162,8 @@ svg {
   font-size: var(--fs-900);
 }
 
-.custom-section:first-of-type {
-  padding-top: var(--header-height, 50rem);
+main > :first-of-type {
+  padding-top: var(--header-height, 5rem);
 }
 
 .wrapper {

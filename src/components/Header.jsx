@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { useEffect } from "react";
 
 function Header() {
   const [isShowing, setIsShowing] = useState(false);
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const headerHeight = headerRef.current.offsetHeight;
+    document.documentElement.style.setProperty(
+      "--header-height",
+      headerHeight + "px"
+    );
+  }, []);
 
   return (
-    <header className="main-header absolute inset-x-0 top-0">
-      <div className="wrapper ">
+    <header ref={headerRef} className="main-header | absolute inset-x-0 top-0">
+      <div className="wrapper">
         <div className="header-nav">
           <NavLink to="/" className="">
             <img className="" src={NSSLogo} alt="NOW Software Solutions Logo" />
@@ -29,9 +37,9 @@ function Header() {
           <nav className="site-navigation">
             <ul
               role="list"
-              className={`${
+              className={`primary-navigation | ${
                 isShowing ? "show-menu" : "hide-menu"
-              } primary-navigation`}
+              } `}
               id="primary-navigation"
             >
               <li>
