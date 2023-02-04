@@ -142,9 +142,11 @@ svg {
 
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
 }
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
+  line-height: 1.1;
 }
 
 .fs-300 {
@@ -166,23 +168,113 @@ svg {
   font-size: var(--fs-900);
 }
 
-main > :first-of-type {
-  padding-top: var(--header-height, 5rem);
-}
-
 .wrapper {
   --max-width: 1200px;
-  --padding: 1rem;
+  --padding: 2rem;
 
   width: min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
 }
 
+:where(.flow :not(:first-child)) {
+  margin-block-start: var(--flow-spacer, 1em);
+}
+
+/* General style */
+
+body {
+  font-size: var(--fs-body);
+  font-family: var(--ff-body);
+  color: var(--clr-neutral-900);
+}
+
+main > :first-of-type {
+  padding-top: var(--header-height, 5rem);
+}
+
+main > :where(section) {
+  padding-block: 2em;
+}
+
+/* Button */
+
+.button {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0.45rem;
+  padding: 0.5em 1em;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-100);
+  background-color: var(--clr-primary-400);
+}
+
+.button:hover,
+.button:focus-visible {
+  filter: brightness(1.2);
+}
+
+.button[data-type="inverted"] {
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-400);
+}
+
+/* Navigation */
+
+.header-nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-nav-toggle {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+}
+.nav-list a {
+  padding: 0.5rem 0.75rem;
+}
+.nav-list a:hover {
+  color: var(--clr-primary-400);
+  background-color: var(--clr-neutral-100);
+}
 @media screen and (max-width: 50em) {
-  .show-menu {
-    visibility: hidden;
+  .primary-navigation {
+    display: none;
+    position: absolute;
+    inset: var(--header-height) 0;
+    width: min(30rem, 100% - 10rem);
+    margin-inline: auto;
+    min-height: 100vh;
   }
-  .hide-menu {
-    visibility: visible;
+
+  .nav-list {
+    display: grid;
+    gap: 1.5rem;
+    text-align: center;
+    background-color: var(--clr-primary-400);
+    padding-block: 1.5rem;
+  }
+
+  .main-header:has(.primary-navigation[data-visible="true"]):before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: hsl(0, 0%, 0%, 0.75);
+    z-index: -1;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    display: block;
+  }
+
+  .menu-nav-toggle {
+    display: block;
+  }
+
+  .header-cta {
+    display: none;
   }
 }

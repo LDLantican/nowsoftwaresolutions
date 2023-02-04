@@ -11,11 +11,15 @@ import CustomElement from "../components/CustomElement";
 function Home() {
   return (
     <>
-      <CustomElement element="section" backgroundImage={HeroBG}>
-        <div className="wrapper">
+      <CustomElement
+        element="section"
+        backgroundImage={HeroBG}
+        className="bg-neutral-900/70 bg-blend-overlay"
+      >
+        <div className="wrapper flow">
           <img
             src={NSSLogo}
-            className="max-w-[28.125rem]"
+            className="max-w-[28rem] w-full mx-auto"
             alt="NOW Software Solution Company Logo"
           />
           <h1 className="fs-900 text-neutral-100 uppercase fw-bold">Welcome</h1>
@@ -29,50 +33,59 @@ function Home() {
         backgroundImage={Section1}
         className="bg-neutral-900 bg-blend-overlay text-neutral-100"
       >
-        <div className="wrapper">
-          <h2 className="fs-primary-heading uppercase fw-semi-bold">
-            We shape the perfect solutions
-            <span className="text-primary-400 fw-bold">.</span>
-          </h2>
-          <p>
-            We are committed to providing our customers with exceptional service
-            while offering our employees the best training.
-          </p>
+        <div className="wrapper grid gap-10">
+          <div className="grid gap-4">
+            <h2 className="fs-primary-heading uppercase fw-semi-bold">
+              We shape the perfect solutions
+              <span className="text-primary-400 fw-bold">.</span>
+            </h2>
+            <p>
+              We are committed to providing our customers with exceptional
+              service while offering our employees the best training.
+            </p>
+          </div>
 
-          <ul>
+          <ul className="text-center grid gap-4">
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Customer Relationship Management
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Campaign Creation and Management
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Web & App Development
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Content & Social Media Marketing
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Digital Marketing
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 Brand Development
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
             <li>
-              <a href="#" className="fs-secondary-heading">
+              <a href="#" className="grid gap-3 justify-center">
                 SEO Services
+                <p className="button text-[0.7rem] mx-auto">Read More</p>
               </a>
             </li>
           </ul>
@@ -132,13 +145,13 @@ function Home() {
         </div>
       </CustomElement>
       <section>
-        <div className="wrapper">
+        <div className="wrapper grid gap-8">
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             The Business Growth Process
             <span className="text-primary-400 fw-bold">.</span>
           </h2>
-          <ul>
-            <li>
+          <ul className="grid gap-6">
+            <li className="grid gap-2">
               <h3 className="fs-secondary-heading fw-semi-bold">Meet</h3>
               <p>
                 The first step is to discover more about you, your company's
@@ -147,7 +160,7 @@ function Home() {
                 project goals.
               </p>
             </li>
-            <li>
+            <li className="grid gap-2">
               <h3 className="fs-secondary-heading fw-semi-bold">Plan</h3>
               <p>
                 Following the initial meetup, we will outline your project,
@@ -156,7 +169,7 @@ function Home() {
                 makes your goals achievable.
               </p>
             </li>
-            <li>
+            <li className="grid gap-2">
               <h3 className="fs-secondary-heading fw-semi-bold">
                 Web Design & Dev
               </h3>
@@ -167,7 +180,7 @@ function Home() {
                 design goals.
               </p>
             </li>
-            <li>
+            <li className="grid gap-2">
               <h3 className="fs-secondary-heading fw-semi-bold">Testing</h3>
               <p>
                 Here review and testing takes place, which ensures the quality
@@ -175,7 +188,7 @@ function Home() {
                 design process, because your reputation is our reputation!
               </p>
             </li>
-            <li>
+            <li className="grid gap-2">
               <h3 className="fs-secondary-heading fw-semi-bold">Launch</h3>
               <p>
                 Here is where we present your custom web design project. Upon
@@ -208,7 +221,7 @@ function Home() {
         backgroundImage={Section2}
         className="bg-[hsl(0,0%,100%,0.75)] bg-blend-overlay"
       >
-        <div className="wrapper">
+        <div className="wrapper grid gap-4">
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             Our work<span className="text-primary-400 fw-bold">.</span>
           </h2>
@@ -229,11 +242,19 @@ function Home() {
         </div>
       </CustomElement>
       <section>
-        <div className="wrapper">
+        <div className="wrapper flow" style={{ "--flow-spacer": "2em" }}>
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
-            Client reviews<span className="text-primary-400 fw-bold">.</span>
+            Client reviews
+            <span className="text-primary-400 fw-bold">.</span>
           </h2>
-          <video src="#"></video>
+          <iframe
+            src="https://www.youtube.com/embed/ui97DX9HyPM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            className="w-[min(35rem,100%)] aspect-video mx-auto"
+          ></iframe>
         </div>
       </section>
       <CustomElement
@@ -242,7 +263,7 @@ function Home() {
         className="bg-[hsl(0,0%,0%,0.7)] bg-blend-multiply bg-fixed text-neutral-100"
       >
         <div className="wrapper">
-          <blockquote className="fs-primary-heading uppercase fw-semi-bold">
+          <blockquote className="fs-primary-heading uppercase fw-semi-bold text-center">
             <p>
               Great things in business are never done by one person. <br />
               <span className="text-primary-400">
@@ -259,7 +280,11 @@ function Home() {
             <p className="fs-primary-heading uppercase fw-semi-bold">
               Let's get your project started!
             </p>
-            <a href="#" className="fs-secondary-heading uppercase fw-semi-bold">
+            <a
+              href="#"
+              className="button fs-secondary-heading uppercase fw-semi-bold"
+              data-type="inverted"
+            >
               Contact Us
             </a>
           </div>

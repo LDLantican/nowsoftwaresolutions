@@ -26,29 +26,31 @@ function Header() {
   }, [headerHeight]);
 
   return (
-    <header ref={headerRef} className="main-header | absolute inset-x-0 top-0">
+    <header
+      ref={headerRef}
+      className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-50"
+    >
       <div className="wrapper">
-        <div className="header-nav">
-          <NavLink to="/" className="">
-            <img className="" src={NSSLogo} alt="NOW Software Solutions Logo" />
+        <div className="header-nav-wrapper | mt-6">
+          <NavLink to="/" className="block max-w-[110px]">
+            <img src={NSSLogo} alt="NOW Software Solutions Logo" />
           </NavLink>
           <button
-            className="menu-toggle"
+            className="menu-nav-toggle | text-4xl z-50"
             aria-controls="primary-navigation"
-            aria-expanded="false"
+            aria-expanded={isShowing}
             onClick={() => {
               setIsShowing((prev) => !prev);
             }}
           >
+            <FontAwesomeIcon icon={faBars} aria-hidden="true" />
             <span className="sr-only">Menu</span>
-            <FontAwesomeIcon icon={faBars} />
           </button>
-          <nav className="site-navigation">
+          <nav className="primary-navigation | z-40" data-visible={isShowing}>
             <ul
+              className="nav-list | uppercase rounded-md"
+              aria-label="Primary"
               role="list"
-              className={`primary-navigation | ${
-                isShowing ? "show-menu" : "hide-menu"
-              } `}
               id="primary-navigation"
             >
               <li>
@@ -75,8 +77,8 @@ function Header() {
             </ul>
           </nav>
           <a className="header-cta" href="tel:+13343445870">
-            <span>Call Anytime</span>
-            <span>334 344 5870</span>
+            <p>Call Anytime:</p>
+            <p>334 344 5870</p>
           </a>
         </div>
       </div>

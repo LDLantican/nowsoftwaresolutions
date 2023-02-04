@@ -12,9 +12,9 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="main-layout | grid grid-rows-[auto_1fr_auto] relative">
+    <div className="main-layout | grid grid-rows-[auto_1fr_auto] relative min-h-screen min-h-[100dvh]">
       <Header />
-      <main className="min-h-screen min-h-[100dvh]">
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
