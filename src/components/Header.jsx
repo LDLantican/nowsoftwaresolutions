@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
   const [isShowing, setIsShowing] = useState(false);
@@ -76,9 +76,16 @@ function Header() {
               </li>
             </ul>
           </nav>
-          <a className="header-cta" href="tel:+13343445870">
-            <p>Call Anytime:</p>
-            <p>334 344 5870</p>
+          <a
+            className="header-cta | grid grid-cols-[auto,1fr] grid-rows-2"
+            href="tel:+13343445870"
+          >
+            <FontAwesomeIcon
+              icon={faPhoneVolume}
+              className="text-primary-400 row-span-full h-full scale-[0.6]"
+            />
+            <p className="w-max break-keep text-ellipsis">Call Anytime:</p>
+            <p className="text-left">334 344 5870</p>
           </a>
         </div>
       </div>

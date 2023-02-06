@@ -7,6 +7,13 @@ import Section3 from "../assets/images/SectionBG-3.png";
 import Section4 from "../assets/images/SectionBG-4.jpg";
 import Section5 from "../assets/images/SectionBG-5.png";
 import CustomElement from "../components/CustomElement";
+import Solutions1 from "../assets/images/Marketing-Strategy.png";
+import Solutions2 from "../assets/images/Campaign-Creation-Management.png";
+import Solutions3 from "../assets/images/Web-App-Development.png";
+import Solutions4 from "../assets/images/Content-Social-Media-Marketing.png";
+import Solutions5 from "../assets/images/Digital-Marketing.png";
+import Solutions6 from "../assets/images/Brand-Development.png";
+import Solutions7 from "../assets/images/SEO-Services.png";
 
 function Home() {
   return (
@@ -33,59 +40,112 @@ function Home() {
         backgroundImage={Section1}
         className="bg-neutral-900 bg-blend-overlay text-neutral-100"
       >
-        <div className="wrapper grid gap-10">
-          <div className="grid gap-4">
-            <h2 className="fs-primary-heading uppercase fw-semi-bold">
-              We shape the perfect solutions
-              <span className="text-primary-400 fw-bold">.</span>
-            </h2>
-            <p>
-              We are committed to providing our customers with exceptional
-              service while offering our employees the best training.
-            </p>
-          </div>
-
-          <ul className="text-center grid gap-4">
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Customer Relationship Management
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+        <div className="wrapper">
+          <ul className="text-center flex flex-wrap justify-center items-center gap-2">
+            <div className="grid gap-8 text-left basis-52 grow-[2] shrink-0">
+              <h2 className="fs-primary-heading uppercase fw-semi-bold">
+                We shape the perfect solutions
+                <span className="text-primary-400 fw-bold">.</span>
+              </h2>
+              <p>
+                We are committed to providing our customers with exceptional
+                service while offering our employees the best training.
+              </p>
+            </div>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions1} alt="" />
+                <h3>Customer Relationship Management</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  Managing all your company's relationships and interactions
+                  with customers and potential customers. The goal is simple:
+                  Improve business relationships.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Campaign Creation and Management
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions2} alt="" />
+                <h3>Campaign Creation and Management</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  High-performance idea generation, day-to-day management and
+                  optimization of campaigns.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Web & App Development
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions3} alt="" />
+                <h3>Web & App Development</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  From websites to mobile apps, we create digital experiences
+                  that get your company noticed.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Content & Social Media Marketing
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions4} alt="" />
+                <h3>Content & Social Media Marketing</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  Content strategies that engage customers in a personal way to
+                  generate brand awareness and drive traffic.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Digital Marketing
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions5} alt="" />
+                <h3>Digital Marketing</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  Targeted strategies and tactics. Measured results.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                Brand Development
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions6} alt="" />
+                <h3>Brand Development</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  Memorable brand stories that connect.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
-            <li>
-              <a href="#" className="grid gap-3 justify-center">
-                SEO Services
-                <p className="button text-[0.7rem] mx-auto">Read More</p>
+            <li className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden">
+              <a
+                href="#"
+                className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+              >
+                <img className="max-w-[8rem] mx-auto" src={Solutions7} alt="" />
+                <h3>SEO Services</h3>
+                <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  Custom search engine marketing services for B2B and B2C.
+                </p>
+                <p className="button text-[0.65rem] mx-auto">Read More</p>
               </a>
             </li>
           </ul>
@@ -204,6 +264,17 @@ function Home() {
       </section>
       <CustomElement element="section" backgroundImage={Section3}>
         <div className="wrapper">
+          <div className="w-3/4 mx-auto">
+            <iframe
+              className="w-full aspect-video"
+              src="https://www.youtube.com/embed/Q5jBN9_zNrk"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             Experience us live
             <span className="text-primary-400 fw-bold">.</span>
