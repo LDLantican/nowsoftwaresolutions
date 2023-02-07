@@ -9,7 +9,7 @@ function Footer() {
     <CustomElement
       element="footer"
       backgroundImage={FooterBG}
-      className="main-footer | bg-[hsl(0,0%,0%,0.7)] bg-blend-overlay text-neutral-100"
+      className="main-footer | bg-[hsl(0,0%,0%,0.7)] text-center bg-blend-overlay text-neutral-100"
     >
       <div className="wrapper">
         <div className="">
@@ -27,7 +27,8 @@ function Footer() {
             </p>
           </address>
         </div>
-        <p className="fs-300">
+        <hr className="h-[0.15rem] bg-neutral-100 my-4" />
+        <p className="fs-300 mb-4">
           © Copyright {new Date().getUTCFullYear()}, NOW Software Solutions
         </p>
       </div>

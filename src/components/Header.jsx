@@ -22,7 +22,6 @@ function Header() {
       "--header-height",
       headerHeight + "px"
     );
-    console.log(headerHeight);
   }, [headerHeight]);
 
   return (
