@@ -27,6 +27,11 @@ import VirtualAssisstantSolutionsBG from "../assets/images/VirtualAssisstantSolu
 import HomeServicesBG from "../assets/images/HomeServicesBG.jpg";
 import LegalBG from "../assets/images/LegalBG.jpg";
 import RestaurantBG from "../assets/images/RestaurantBG.jpg";
+import Team from "../assets/images/team.png";
+import CreditRepairWork from "../assets/images/CreditRepairWork.png";
+import RecruitingWork from "../assets/images/RecruitingWork.png";
+import RealEstateWork from "../assets/images/RealEstateWork.png";
+import HouseRepairWork from "../assets/images/HouseRepairWork.png";
 
 function Home() {
   return (
@@ -117,7 +122,7 @@ function Home() {
               >
                 <a
                   href={solution.link}
-                  className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-1000 ease-in-out"
+                  className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-500 ease-in-out"
                 >
                   <img
                     className="max-w-[8rem] mx-auto"
@@ -125,7 +130,7 @@ function Home() {
                     alt="CRM Icon"
                   />
                   <h3>{solution.title}</h3>
-                  <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-1000 ease-in-out">
+                  <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-500 ease-in-out">
                     {solution.desc}
                   </p>
                   <p className="button text-[0.65rem] mx-auto">Read More</p>
@@ -164,7 +169,7 @@ function Home() {
             <hr className="h-[0.425rem] bg-primary-400 my-4" />
             <p>Or choose from the following templates!</p>
           </div>
-          <ul className="grid grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] auto-rows-[minmax(12rem,1fr)] isolate">
+          <ul className="grid grid-cols-[repeat(auto-fit,minmax(25rem,1fr))] auto-rows-[minmax(16rem,1fr)] isolate">
             {[
               {
                 link: "https://www.nowsoftwaresolutions.com/re-template-home",
@@ -215,10 +220,10 @@ function Home() {
                 >
                   <img
                     src={template.img}
-                    alt=""
+                    alt={`${template.title} website template screenshot`}
                     className="absolute w-[inherit] h-[inherit] object-cover object-top bottom-full  opacity-0  group-hover:opacity-100 group-hover:bottom-0 transition-all -z-10"
                   />
-                  <p className="fs-secondary-heading button absolute bottom-8 group-hover:bottom-4 opacity-100 group-hover:opacity-10 transition-all">
+                  <p className="fs-secondary-heading button shadow-lg absolute bottom-8 group-hover:bottom-4 opacity-100 group-hover:opacity-0 transition-all">
                     {template.title}
                   </p>
                 </a>
@@ -228,60 +233,73 @@ function Home() {
         </CustomElement>
       </CustomElement>
       <section>
-        <div className="wrapper grid gap-8">
+        <div className="wrapper relative grid gap-8">
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             The Business Growth Process
             <span className="text-primary-400 fw-bold">.</span>
           </h2>
-          <ul className="grid gap-6">
-            <li className="grid gap-2">
-              <h3 className="fs-secondary-heading fw-semi-bold">Meet</h3>
-              <p>
-                The first step is to discover more about you, your company's
-                vision, and to build a strong relationship. This is where we
-                will create your brand, create a custom strategy, and set
-                project goals.
-              </p>
-            </li>
-            <li className="grid gap-2">
-              <h3 className="fs-secondary-heading fw-semi-bold">Plan</h3>
-              <p>
-                Following the initial meetup, we will outline your project,
-                create milestones, and agree on priorities. Now we have a
-                strategic plan in place that aligns with your initial vision and
-                makes your goals achievable.
-              </p>
-            </li>
-            <li className="grid gap-2">
-              <h3 className="fs-secondary-heading fw-semi-bold">
-                Web Design & Dev
-              </h3>
-              <p>
-                Once the outline is finished, visual concepts of the custom
-                project will be created. Our creative and development team
-                reviews and revises the materials until it aligns with your web
-                design goals.
-              </p>
-            </li>
-            <li className="grid gap-2">
-              <h3 className="fs-secondary-heading fw-semi-bold">Testing</h3>
-              <p>
-                Here review and testing takes place, which ensures the quality
-                of your project. This is the most valuable step in the web
-                design process, because your reputation is our reputation!
-              </p>
-            </li>
-            <li className="grid gap-2">
-              <h3 className="fs-secondary-heading fw-semi-bold">Launch</h3>
-              <p>
-                Here is where we present your custom web design project. Upon
-                approval, your project will be launched and promoted. Then sit
-                back and watch the momentum!
-              </p>
-            </li>
+          <ul className="flex flex-col gap-6">
+            {[
+              {
+                title: "Meet",
+                description:
+                  "The first step is to discover more about you, your company's vision, and to build a strong relationship. This is where we will create your brand, create a custom strategy, and set project goals.",
+                maxWidth: "max-w-full",
+                arrow: "down",
+              },
+              {
+                title: "Plan",
+                description:
+                  "Following the initial meetup, we will outline your project, create milestones, and agree on priorities. Now we have a strategic plan in place that aligns with your initial vision and makes your goals achievable.",
+                maxWidth: "max-w-4xl",
+                arrow: "down",
+              },
+              {
+                title: "Web Design & Dev",
+                description:
+                  "Once the outline is finished, visual concepts of the custom project will be created. Our creative and development team reviews and revises the materials until it aligns with your web design goals.",
+                maxWidth: "max-w-2xl",
+                arrow: "right",
+              },
+              {
+                title: "Testing",
+                description:
+                  "Here review and testing takes place, which ensures the quality of your project. This is the most valuable step in the web design process, because your reputation is our reputation!",
+                maxWidth: "max-w-4xl",
+                arrow: "right",
+              },
+              {
+                title: "Launch",
+                description:
+                  "Here is where we present your custom web design project. Upon approval, your project will be launched and romoted. Then sit back and watch the momentum!",
+                maxWidth: "max-w-full",
+              },
+            ].map((process) => (
+              <li
+                className={`grow-0 srhink-1 w-full ${process.maxWidth} ml-auto`}
+              >
+                <div className="grid gap-2 max-w-md mx-auto">
+                  <h3 className="fs-secondary-heading fw-semi-bold">
+                    {process.title}
+                  </h3>
+                  <p className="text-justify">{process.description}</p>
+                </div>
+              </li>
+            ))}
           </ul>
-          <a href="#" className="fs-300">
-            Who's behind the work? Find out here!
+          <a
+            href="#"
+            className="text-xs md:absolute top-2/4 text-center opacity-75 hover:opacity-100 group"
+          >
+            <img
+              aria-hidden="true"
+              src={Team}
+              alt="Laptop icon by Stickers, Flaticon.com"
+              className="w-16 mx-auto group-hover:rotate-6 group-hover:scale-105"
+            />
+            Who's behind the work?
+            <br />
+            Find out here!
           </a>
         </div>
       </section>
@@ -318,19 +336,40 @@ function Home() {
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             Our work<span className="text-primary-400 fw-bold">.</span>
           </h2>
-          <ul>
-            <li>
-              <a href="#">Credit Repair</a>
-            </li>
-            <li>
-              <a href="#">Recruiting</a>
-            </li>
-            <li>
-              <a href="#">Real Estate</a>
-            </li>
-            <li>
-              <a href="#">Roofing</a>
-            </li>
+          <ul className="flex flex-wrap justify-center gap-8">
+            {[
+              {
+                title: "Credit Repair",
+                link: "https://www.nowcreditsolutions.com/home",
+                img: CreditRepairWork,
+              },
+              {
+                title: "Recruiting",
+                link: "https://www.reconcoach.com/",
+                img: RecruitingWork,
+              },
+              {
+                title: "Real Estate",
+                link: "https://www.camelotpropertiesonline.com/",
+                img: RealEstateWork,
+              },
+              {
+                title: "House Repair",
+                link: "https://alabamasignaturehomes.com/",
+                img: HouseRepairWork,
+              },
+            ].map((work) => (
+              <li className="text-center max-w-[24rem] group">
+                <a href={work.link}>
+                  <img
+                    src={work.img}
+                    alt={`${work.title} website screenshot`}
+                    className="block mx-auto aspect-video object-cover object-left-top mb-4 shadow-md group-hover:scale-105 group-hover:shadow-xl transition-all"
+                  />
+                  {work.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </CustomElement>
@@ -354,7 +393,7 @@ function Home() {
         backgroundImage={Section4}
         className="bg-[hsl(0,0%,0%,0.7)] bg-blend-multiply bg-fixed text-neutral-100"
       >
-        <div className="wrapper">
+        <div className="wrapper  mb-8">
           <blockquote className="fs-primary-heading uppercase fw-semi-bold text-center">
             <p>
               Great things in business are never done by one person. <br />
@@ -366,9 +405,9 @@ function Home() {
         </div>
         <CustomElement
           backgroundImage={Section5}
-          className="max-w-[1200px] mx-auto bg-primary-400 bg-blend-darken"
+          className="max-w-[1000px] mx-auto bg-primary-400 bg-blend-darken"
         >
-          <div className="wrapper">
+          <div className="wrapper flex flex-wrap justify-between items-center gap-4 p-8">
             <p className="fs-primary-heading uppercase fw-semi-bold">
               Let's get your project started!
             </p>

@@ -27,7 +27,7 @@ function Header() {
   return (
     <header
       ref={headerRef}
-      className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-50"
+      className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-[100]"
     >
       <div className="wrapper">
         <div className="header-nav-wrapper | mt-6">
