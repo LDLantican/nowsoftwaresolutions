@@ -27,7 +27,7 @@ function Header() {
   return (
     <header
       ref={headerRef}
-      className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-[100]"
+      className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-[200]"
     >
       <div className="wrapper">
         <div className="header-nav-wrapper | mt-6">
@@ -76,12 +76,12 @@ function Header() {
             </ul>
           </nav>
           <a
-            className="header-cta | grid grid-cols-[auto,1fr] grid-rows-2"
+            className="header-cta | grid grid-cols-[auto,1fr] grid-rows-2 group"
             href="tel:+13343445870"
           >
             <FontAwesomeIcon
               icon={faPhoneVolume}
-              className="text-primary-400 row-span-full h-full scale-[0.6]"
+              className="text-primary-400 row-span-full h-full scale-[0.6] group-hover:text-primary-200"
             />
             <p className="w-max break-keep text-ellipsis">Call Anytime:</p>
             <p className="text-left">334 344 5870</p>

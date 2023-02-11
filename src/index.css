@@ -2,6 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* z-[100] - plugin overlays */
+/* z-[200] - header */
+/* z-[300] - announcements */
+/* z-[400] - modal */
+
 :root {
   --clr-primary-400: #b8084b;
 

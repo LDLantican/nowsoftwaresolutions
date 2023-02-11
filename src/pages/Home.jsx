@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import HeroBG from "../assets/images/hero-bg.gif";
 import Section1 from "../assets/images/SectionBG-1.png";
@@ -32,8 +32,24 @@ import CreditRepairWork from "../assets/images/CreditRepairWork.png";
 import RecruitingWork from "../assets/images/RecruitingWork.png";
 import RealEstateWork from "../assets/images/RealEstateWork.png";
 import HouseRepairWork from "../assets/images/HouseRepairWork.png";
+import MeetProcess from "../assets/images/meet-process.png";
+import PlanProcess from "../assets/images/plan-process.png";
+import WebDesignDevProcess from "../assets/images/web-design-dev-process.png";
+import TestingProcess from "../assets/images/testing-process.png";
+import LaunchProcess from "../assets/images/launch-process.png";
+import HiveBG from "../assets/images/hiveBG.jpeg";
+import videoModalBG from "../assets/images/videoModal.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClose,
+  faPlay,
+  faPlayCircle,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const customDropShadowValues = "drop-shadow-[0_1px_5px_hsl(0,0%,0%,0.5)]";
   return (
     <>
       <CustomElement
@@ -157,7 +173,10 @@ function Home() {
               <img src={SaaS} alt="SaaS Icon" className="max-w-[9.375rem]" />
               <p className="grow-[3] shrink-0 basis-96">
                 Please{" "}
-                <a href="#" className="capitalize text-primary-400">
+                <a
+                  href="#"
+                  className="capitalize text-primary-400 hover:text-primary-200"
+                >
                   click here
                 </a>{" "}
                 if you would like to access our SaaS Mode, build, and increase
@@ -232,7 +251,11 @@ function Home() {
           </ul>
         </CustomElement>
       </CustomElement>
-      <section>
+      <CustomElement
+        element="section"
+        backgroundImage={HiveBG}
+        className="bg-white/[0.85] bg-blend-overlay"
+      >
         <div className="wrapper relative grid gap-8">
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             The Business Growth Process
@@ -246,6 +269,7 @@ function Home() {
                   "The first step is to discover more about you, your company's vision, and to build a strong relationship. This is where we will create your brand, create a custom strategy, and set project goals.",
                 maxWidth: "max-w-full",
                 arrow: "down",
+                thumb: MeetProcess,
               },
               {
                 title: "Plan",
@@ -253,6 +277,7 @@ function Home() {
                   "Following the initial meetup, we will outline your project, create milestones, and agree on priorities. Now we have a strategic plan in place that aligns with your initial vision and makes your goals achievable.",
                 maxWidth: "max-w-4xl",
                 arrow: "down",
+                thumb: PlanProcess,
               },
               {
                 title: "Web Design & Dev",
@@ -260,6 +285,7 @@ function Home() {
                   "Once the outline is finished, visual concepts of the custom project will be created. Our creative and development team reviews and revises the materials until it aligns with your web design goals.",
                 maxWidth: "max-w-2xl",
                 arrow: "right",
+                thumb: WebDesignDevProcess,
               },
               {
                 title: "Testing",
@@ -267,18 +293,40 @@ function Home() {
                   "Here review and testing takes place, which ensures the quality of your project. This is the most valuable step in the web design process, because your reputation is our reputation!",
                 maxWidth: "max-w-4xl",
                 arrow: "right",
+                thumb: TestingProcess,
               },
               {
                 title: "Launch",
                 description:
                   "Here is where we present your custom web design project. Upon approval, your project will be launched and romoted. Then sit back and watch the momentum!",
                 maxWidth: "max-w-full",
+                thumb: LaunchProcess,
               },
             ].map((process) => (
               <li
-                className={`grow-0 srhink-1 w-full ${process.maxWidth} ml-auto`}
+                key={crypto.randomUUID()}
+                className={` grow-0 srhink-1 w-full ${process.maxWidth} ml-auto`}
               >
-                <div className="grid gap-2 max-w-md mx-auto">
+                <div
+                  className={`relative grid grid-cols-[auto_1fr] grid-rows-[repeat(2,auto)] gap-2 max-w-lg mx-auto isolate ${
+                    process.arrow
+                      ? 'after:content-[""] after:absolute after:h-24 after:w-24 after:opacity-40 after:z-[-1] after:bg-[url("./assets/images/processArrow.png")] after:bg-contain after:bg-no-repeat after:scale-x-[-1]'
+                      : ""
+                  } ${
+                    process.arrow === "down"
+                      ? "after:rotate-[115deg] after:right-0 after:top-10"
+                      : ""
+                  } ${
+                    process.arrow === "right"
+                      ? "after:rotate-[190deg] after:right-0 after:top-20"
+                      : ""
+                  }`}
+                >
+                  <img
+                    src={process.thumb}
+                    alt={`${process.title}-step graphics`}
+                    className="aspect-square w-14 row-span-full opacity-75"
+                  />
                   <h3 className="fs-secondary-heading fw-semi-bold">
                     {process.title}
                   </h3>
@@ -289,43 +337,92 @@ function Home() {
           </ul>
           <a
             href="#"
-            className="text-xs md:absolute top-2/4 text-center opacity-75 hover:opacity-100 group"
+            className="text-xs md:absolute top-[45%] text-center opacity-70 hover:opacity-100 group"
           >
             <img
               aria-hidden="true"
               src={Team}
               alt="Laptop icon by Stickers, Flaticon.com"
-              className="w-16 mx-auto group-hover:rotate-6 group-hover:scale-105"
+              className="w-[clamp(4rem,10vw,18rem)] mx-auto group-hover:rotate-6 group-hover:scale-105"
             />
             Who's behind the work?
             <br />
             Find out here!
           </a>
         </div>
-      </section>
+      </CustomElement>
       <CustomElement element="section" backgroundImage={Section3}>
-        <div className="wrapper">
-          <div className="w-3/4 mx-auto">
-            <iframe
-              className="w-full aspect-video"
-              src="https://www.youtube.com/embed/Q5jBN9_zNrk"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-
+        <div className="wrapper grid gap-4">
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
             Experience us live
             <span className="text-primary-400 fw-bold">.</span>
           </h2>
-          <p className="text-primary-400 uppercase fw-bold">
-            Let's get your project started
-          </p>
-          <a href="#" className="uppercase fw-bold">
-            contact us
-          </a>
+          <CustomElement
+            element="div"
+            backgroundImage={videoModalBG}
+            className="w-full aspect-video bg-black/60 bg-blend-overlay grid gap-8 place-items-center md:grid-cols-2 grid-cols-1 p-8"
+          >
+            <p
+              className={`text-primary-400  text-6xl uppercase fw-bold text-center self-end ${customDropShadowValues}`}
+            >
+              Let's get your project started
+            </p>
+            <button
+              type="button"
+              onClick={() => {
+                setIsModalOpen(true);
+              }}
+              className="text-primary-400 hover:scale-105 md:text-[8rem] text-6xl md:col-[1_/_span_1] md:row-[1_/_span_2] transition-all"
+              aria-label="Open Youtube Video Modal"
+              onKeyDown={(e) => {
+                console.log(e.key);
+                if (e.key === "Escape") {
+                  setIsModalOpen(false);
+                }
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faPlayCircle}
+                className={`${customDropShadowValues}`}
+              />
+            </button>
+            <a
+              href="#"
+              className={`text-white hover:text-gray-400 text-2xl uppercase fw-bold relative self-start before:content-[""] before:absolute before:border-t-4 before:w-2/4 before:right-0 before:-translate-x-2/4 before:top-[calc(100%_+_0.5rem)] ${customDropShadowValues}`}
+            >
+              contact us
+            </a>
+          </CustomElement>
         </div>
+
+        {isModalOpen && (
+          <div
+            onClick={() => {
+              setIsModalOpen(false);
+            }}
+            className="fixed w-full h-screen bg-black/80 inset-0 grid place-items-center z-[400]"
+            aria-label="Youtube Video Modal"
+          >
+            <div className="custom-home-modal | relative w-[min(50rem,90%)]">
+              <button
+                aria-label="Close Youtube Video Modal"
+                className="grid place-items-center absolute left-[98%] bottom-[96%]"
+              >
+                <FontAwesomeIcon
+                  icon={faClose}
+                  className={`text-white bg-primary-400 p-[0.45rem] w-full aspect-square text-[clamp(0.5rem,10vw,1rem)] hover:bg-primary-200  rounded-full ${customDropShadowValues}`}
+                />
+              </button>
+              <iframe
+                className="w-full aspect-video"
+                src="https://www.youtube.com/embed/Q5jBN9_zNrk"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        )}
       </CustomElement>
       <CustomElement
         element="section"
@@ -359,7 +456,10 @@ function Home() {
                 img: HouseRepairWork,
               },
             ].map((work) => (
-              <li className="text-center max-w-[24rem] group">
+              <li
+                className="text-center max-w-[24rem] group"
+                key={crypto.randomUUID()}
+              >
                 <a href={work.link}>
                   <img
                     src={work.img}
