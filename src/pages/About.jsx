@@ -13,9 +13,9 @@ function About() {
         className="bg-black/80 bg-blend-overlay"
       ></CustomElement>
       <section>
-        <div className="wrapper grid grid-cols-[repeat(auto-fit,minmax(450px,1fr))] items-start gap-4">
+        <div className="wrapper grid grid-cols-[repeat(auto-fit,minmax(20rem,1fr))] items-center gap-8">
           <div className="grid gap-8">
-            <h1 className="text-3xl font-medium">
+            <h1 className="text-3xl font-semibold">
               ABOUT{" "}
               <span className="text-primary-400">
                 NOW SOFTWARE & MARKETING SOLUTIONS
@@ -36,7 +36,11 @@ function About() {
               out above the rest!
             </p>
           </div>
-          <img src={AboutGraphics} alt="" className="object-contain" />
+          <img
+            src={AboutGraphics}
+            alt=""
+            className="object-contain w-[34rem]"
+          />
         </div>
       </section>
       <section>

@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
 import HeroBG from "../assets/images/hero-bg.gif";
-import Section1 from "../assets/images/SectionBG-1.png";
 import Section2 from "../assets/images/SectionBG-2.png";
 import Section3 from "../assets/images/SectionBG-3.png";
-import Section4 from "../assets/images/SectionBG-4.jpg";
-import Section5 from "../assets/images/SectionBG-5.png";
 import CustomElement from "../components/CustomElement";
-import Solutions1 from "../assets/images/Marketing-Strategy.png";
-import Solutions2 from "../assets/images/Campaign-Creation-Management.png";
-import Solutions3 from "../assets/images/Web-App-Development.png";
-import Solutions4 from "../assets/images/Content-Social-Media-Marketing.png";
-import Solutions5 from "../assets/images/Digital-Marketing.png";
-import Solutions6 from "../assets/images/Brand-Development.png";
-import Solutions7 from "../assets/images/SEO-Services.png";
 import SaaS from "../assets/images/Saas.png";
 import RealEstate from "../assets/images/RealEstate.jpeg";
 import SmallBusiness from "../assets/images/SmallBusiness.jpeg";
@@ -28,10 +18,6 @@ import HomeServicesBG from "../assets/images/HomeServicesBG.jpg";
 import LegalBG from "../assets/images/LegalBG.jpg";
 import RestaurantBG from "../assets/images/RestaurantBG.jpg";
 import Team from "../assets/images/team.png";
-import CreditRepairWork from "../assets/images/CreditRepairWork.png";
-import RecruitingWork from "../assets/images/RecruitingWork.png";
-import RealEstateWork from "../assets/images/RealEstateWork.png";
-import HouseRepairWork from "../assets/images/HouseRepairWork.png";
 import MeetProcess from "../assets/images/meet-process.png";
 import PlanProcess from "../assets/images/plan-process.png";
 import WebDesignDevProcess from "../assets/images/web-design-dev-process.png";
@@ -40,11 +26,10 @@ import LaunchProcess from "../assets/images/launch-process.png";
 import HiveBG from "../assets/images/hiveBG.jpeg";
 import videoModalBG from "../assets/images/videoModal.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClose,
-  faPlay,
-  faPlayCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faClose, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+import CustomCTA from "../components/section-template/CustomCTA";
+import CustomPortfolio from "../components/section-template/CustomPortfolio";
+import ServicesCarousel from "../components/section-template/ServicesCarousel";
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,91 +56,7 @@ function Home() {
           </a>
         </div>
       </CustomElement>
-      <CustomElement
-        element="section"
-        backgroundImage={Section1}
-        className="bg-neutral-900 bg-blend-overlay text-neutral-100"
-      >
-        <div className="wrapper">
-          <ul className="text-center flex flex-wrap justify-center items-center gap-2">
-            <div className="grid gap-8 text-left basis-52 grow-[2] shrink-0">
-              <h2 className="fs-primary-heading uppercase fw-semi-bold">
-                We shape the perfect solutions
-                <span className="text-primary-400 fw-bold">.</span>
-              </h2>
-              <p>
-                We are committed to providing our customers with exceptional
-                service while offering our employees the best training.
-              </p>
-            </div>
-            {[
-              {
-                link: "",
-                img: Solutions1,
-                title: "Customer Relationship Management",
-                desc: "Managing all your company's relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships.",
-              },
-              {
-                link: "",
-                img: Solutions2,
-                title: "Campaign Creation and Managemen",
-                desc: "High-performance idea generation, day-to-day management and optimization of campaigns.",
-              },
-              {
-                link: "",
-                img: Solutions3,
-                title: "Web & App Development",
-                desc: "From websites to mobile apps, we create digital experiences that get your company noticed.",
-              },
-              {
-                link: "",
-                img: Solutions4,
-                title: "Content & Social Media Marketing",
-                desc: "Content strategies that engage customers in a personal way to generate brand awareness and drive traffic.",
-              },
-              {
-                link: "",
-                img: Solutions5,
-                title: "Digital Marketing",
-                desc: "Targeted strategies and tactics. Measured results.",
-              },
-              {
-                link: "",
-                img: Solutions6,
-                title: "Brand Development",
-                desc: "Memorable brand stories that connect.",
-              },
-              {
-                link: "",
-                img: Solutions7,
-                title: "SEO Services",
-                desc: "Custom search engine marketing services for B2B and B2C.",
-              },
-            ].map((solution) => (
-              <li
-                className="basis-48 grow-0 shrink min-h-[14rem] group overflow-hidden"
-                key={crypto.randomUUID()}
-              >
-                <a
-                  href={solution.link}
-                  className="grid grid-rows-[128px_repeat(3,auto)] gap-4 justify-center max-h-48 translate-y-0 group-hover:translate-y-[-128px] transition-transform duration-500 ease-in-out"
-                >
-                  <img
-                    className="max-w-[8rem] mx-auto"
-                    src={solution.img}
-                    alt="CRM Icon"
-                  />
-                  <h3>{solution.title}</h3>
-                  <p className="text-sm font-light mt-16 group-hover:m-0 transition-all duration-500 ease-in-out">
-                    {solution.desc}
-                  </p>
-                  <p className="button text-[0.65rem] mx-auto">Read More</p>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </CustomElement>
+      <ServicesCarousel texts={true} />
       <CustomElement
         element="section"
         backgroundImage={Section2}
@@ -424,55 +325,7 @@ function Home() {
           </div>
         )}
       </CustomElement>
-      <CustomElement
-        element="section"
-        backgroundImage={Section2}
-        className="bg-[hsl(0,0%,100%,0.75)] bg-blend-overlay"
-      >
-        <div className="wrapper grid gap-4">
-          <h2 className="fs-primary-heading uppercase fw-semi-bold">
-            Our work<span className="text-primary-400 fw-bold">.</span>
-          </h2>
-          <ul className="flex flex-wrap justify-center gap-8">
-            {[
-              {
-                title: "Credit Repair",
-                link: "https://www.nowcreditsolutions.com/home",
-                img: CreditRepairWork,
-              },
-              {
-                title: "Recruiting",
-                link: "https://www.reconcoach.com/",
-                img: RecruitingWork,
-              },
-              {
-                title: "Real Estate",
-                link: "https://www.camelotpropertiesonline.com/",
-                img: RealEstateWork,
-              },
-              {
-                title: "House Repair",
-                link: "https://alabamasignaturehomes.com/",
-                img: HouseRepairWork,
-              },
-            ].map((work) => (
-              <li
-                className="text-center max-w-[24rem] group"
-                key={crypto.randomUUID()}
-              >
-                <a href={work.link}>
-                  <img
-                    src={work.img}
-                    alt={`${work.title} website screenshot`}
-                    className="block mx-auto aspect-video object-cover object-left-top mb-4 shadow-md group-hover:scale-105 group-hover:shadow-xl transition-all"
-                  />
-                  {work.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </CustomElement>
+      <CustomPortfolio header="our work" />
       <section>
         <div className="wrapper flow" style={{ "--flow-spacer": "2em" }}>
           <h2 className="fs-primary-heading uppercase fw-semi-bold">
@@ -488,39 +341,10 @@ function Home() {
           ></iframe>
         </div>
       </section>
-      <CustomElement
-        element="section"
-        backgroundImage={Section4}
-        className="bg-[hsl(0,0%,0%,0.7)] bg-blend-multiply bg-fixed text-neutral-100"
-      >
-        <div className="wrapper  mb-8">
-          <blockquote className="fs-primary-heading uppercase fw-semi-bold text-center">
-            <p>
-              Great things in business are never done by one person. <br />
-              <span className="text-primary-400">
-                They're done by a team of people
-              </span>
-            </p>
-          </blockquote>
-        </div>
-        <CustomElement
-          backgroundImage={Section5}
-          className="max-w-[1000px] mx-auto bg-primary-400 bg-blend-darken"
-        >
-          <div className="wrapper flex flex-wrap justify-between items-center gap-4 p-8">
-            <p className="fs-primary-heading uppercase fw-semi-bold">
-              Let's get your project started!
-            </p>
-            <a
-              href="#"
-              className="button fs-secondary-heading uppercase fw-semi-bold"
-              data-type="inverted"
-            >
-              Contact Us
-            </a>
-          </div>
-        </CustomElement>
-      </CustomElement>
+      <CustomCTA
+        quote="Great things in business are never done by one person. They're done by a team of people"
+        highlight={["They're done by a team of people"]}
+      />
     </>
   );
 }

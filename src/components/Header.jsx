@@ -30,7 +30,7 @@ function Header() {
       className="main-header | absolute inset-x-0 top-0 text-neutral-100 isolate z-[200]"
     >
       <div className="wrapper">
-        <div className="header-nav-wrapper | mt-6">
+        <div className="header-nav-wrapper | mt-6 drop-shadow-lg">
           <NavLink to="/" className="block max-w-[110px]">
             <img src={NSSLogo} alt="NOW Software Solutions Logo" />
           </NavLink>
