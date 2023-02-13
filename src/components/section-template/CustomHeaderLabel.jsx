@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import LaptopBG from "../../assets/images/laptop.jpeg";
 import CustomElement from "../CustomElement";
 
@@ -17,9 +18,9 @@ function CustomHeaderLabel({
         <div className="text-white text-center p-8 uppercase">
           <h1 className="text-6xl font-semibold mb-2">{header}</h1>
           <p className="text-lg font-semibold">
-            <a href="#" className="hover:underline">
+            <NavLink to="/" className="hover:underline">
               Home
-            </a>{" "}
+            </NavLink>{" "}
             - <span className="text-primary-400">{crumbLink}</span>
           </p>
         </div>

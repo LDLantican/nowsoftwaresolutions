@@ -30,6 +30,7 @@ import { faClose, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import CustomCTA from "../components/section-template/CustomCTA";
 import CustomPortfolio from "../components/section-template/CustomPortfolio";
 import ServicesCarousel from "../components/section-template/ServicesCarousel";
+import { NavLink } from "react-router-dom";
 
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -51,9 +52,9 @@ function Home() {
           <h1 className="fs-900 text-neutral-100 uppercase fw-bold mb-4">
             Welcome
           </h1>
-          <a className="button" href="#">
+          <NavLink className="button" to="/services">
             Discover More
-          </a>
+          </NavLink>
         </div>
       </CustomElement>
       <ServicesCarousel texts={true} />
@@ -74,12 +75,12 @@ function Home() {
               <img src={SaaS} alt="SaaS Icon" className="max-w-[9.375rem]" />
               <p className="grow-[3] shrink-0 basis-96">
                 Please{" "}
-                <a
-                  href="#"
+                <NavLink
+                  to="/services"
                   className="capitalize text-primary-400 hover:text-primary-200"
                 >
                   click here
-                </a>{" "}
+                </NavLink>{" "}
                 if you would like to access our SaaS Mode, build, and increase
                 your business freely how ever you want from the ground up. This
                 includes your own website, creating marketing campaigns,
@@ -236,8 +237,8 @@ function Home() {
               </li>
             ))}
           </ul>
-          <a
-            href="#"
+          <NavLink
+            to="/team"
             className="text-xs md:absolute top-[45%] text-center opacity-70 hover:opacity-100 group"
           >
             <img
@@ -249,7 +250,7 @@ function Home() {
             Who's behind the work?
             <br />
             Find out here!
-          </a>
+          </NavLink>
         </div>
       </CustomElement>
       <CustomElement element="section" backgroundImage={Section3}>
@@ -287,12 +288,12 @@ function Home() {
                 className={`${customDropShadowValues}`}
               />
             </button>
-            <a
-              href="#"
+            <NavLink
+              to="/contact"
               className={`text-white hover:text-gray-400 text-2xl uppercase fw-bold relative self-start before:content-[""] before:absolute before:border-t-4 before:w-2/4 before:right-0 before:-translate-x-2/4 before:top-[calc(100%_+_0.5rem)] ${customDropShadowValues}`}
             >
               contact us
-            </a>
+            </NavLink>
           </CustomElement>
         </div>
 

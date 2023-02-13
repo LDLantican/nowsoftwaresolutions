@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Route, Routes } from "react-router-dom";
+import Service from "./components/page-template/Service";
 
 function App() {
   return (
@@ -20,7 +21,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/services">
+            <Route index element={<Services />} />
+            <Route path=":id" element={<Service />} />
+          </Route>
           <Route path="/team" element={<Team />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

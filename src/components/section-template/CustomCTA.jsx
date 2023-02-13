@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomElement from "../CustomElement";
 import Section4 from "../../assets/images/SectionBG-4.jpg";
 import Section5 from "../../assets/images/SectionBG-5.png";
+import { NavLink } from "react-router-dom";
 
 function CustomCTA({
   quote = "insert string of quote here",
@@ -38,13 +39,13 @@ function CustomCTA({
           <p className="fs-primary-heading uppercase fw-semi-bold">
             Let's get your project started!
           </p>
-          <a
-            href="#"
+          <NavLink
+            to="/contact"
             className="button fs-secondary-heading uppercase fw-semi-bold"
             data-type="inverted"
           >
             Contact Us
-          </a>
+          </NavLink>
         </div>
       </CustomElement>
     </CustomElement>

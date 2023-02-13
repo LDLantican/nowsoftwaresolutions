@@ -5,6 +5,7 @@ import RecruitingWork from "../../assets/images/RecruitingWork.png";
 import RealEstateWork from "../../assets/images/RealEstateWork.png";
 import HouseRepairWork from "../../assets/images/HouseRepairWork.png";
 import CustomElement from "../CustomElement";
+import { NavLink } from "react-router-dom";
 
 function CustomPortfolio({ link = false, header = "insert header here" }) {
   return (
@@ -21,12 +22,12 @@ function CustomPortfolio({ link = false, header = "insert header here" }) {
               <span className="text-primary-400 fw-bold">.</span>
             </h2>
             {link && (
-              <a
-                href="#"
+              <NavLink
+                to="/portfolio"
                 className='relative uppercase font-semibold hover:text-neutral-400 after:content-[""] after:absolute after:h-1 after:w-full after:top-full after:left-0 after:bg-primary-400 hover:after:bg-primary-200'
               >
                 view more
-              </a>
+              </NavLink>
             )}
           </div>
           <ul className="flex flex-wrap justify-center gap-8">

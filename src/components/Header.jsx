@@ -1,10 +1,12 @@
 import React, { useRef, useEffect, useState, useLayoutEffect } from "react";
 import NSSLogo from "../assets/images/nss-logo.webp";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faPhoneVolume } from "@fortawesome/free-solid-svg-icons";
+import CustomNavLink from "./CustomNavLink";
 
 function Header() {
+  const location = useLocation();
   const [isShowing, setIsShowing] = useState(false);
   const headerRef = useRef(null);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -23,6 +25,10 @@ function Header() {
       headerHeight + "px"
     );
   }, [headerHeight]);
+
+  useEffect(() => {
+    setIsShowing(false);
+  }, [location.pathname]);
 
   return (
     <header
@@ -52,27 +58,52 @@ function Header() {
               role="list"
               id="primary-navigation"
             >
-              <li>
-                <NavLink to="/">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/about">About</NavLink>
-              </li>
-              <li>
-                <NavLink to="/services">Services</NavLink>
-              </li>
-              <li>
-                <NavLink to="/portfolio">Portfolio</NavLink>
-              </li>
-              <li>
-                <NavLink to="/team">Team</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact">Contact</NavLink>
-              </li>
-              <li>
-                <a href="https://now.nowsoftwaresolutions.com/">Clients</a>
-              </li>
+              {[
+                {
+                  name: "Home",
+                  path: "/",
+                },
+                {
+                  name: "About",
+                  path: "/about",
+                },
+                {
+                  name: "Services",
+                  path: "/services",
+                  dropdown: [
+                    {
+                      name: "Virtual Assisstant Solutions",
+                      path: "/",
+                    },
+                  ],
+                },
+                {
+                  name: "Portfolio",
+                  path: "/portfolio",
+                },
+                {
+                  name: "Team",
+                  path: "/team",
+                },
+                {
+                  name: "Contact",
+                  path: "/contact",
+                },
+                {
+                  name: "Clients",
+                  path: "https://now.nowsoftwaresolutions.com/",
+                  anchor: true,
+                },
+              ].map((item) => (
+                <CustomNavLink
+                  anchor={item.anchor}
+                  key={crypto.randomUUID()}
+                  href={item.path}
+                  dropdown={item.dropdown}
+                >
+                  {item.name}
+                </CustomNavLink>
+              ))}
             </ul>
           </nav>
           <a
