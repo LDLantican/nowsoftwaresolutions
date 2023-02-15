@@ -75,12 +75,12 @@ function Home() {
               <img src={SaaS} alt="SaaS Icon" className="max-w-[9.375rem]" />
               <p className="grow-[3] shrink-0 basis-96">
                 Please{" "}
-                <NavLink
-                  to="/services"
+                <a
+                  href="https://now.nowsoftwaresolutions.com/"
                   className="capitalize text-primary-400 hover:text-primary-200"
                 >
                   click here
-                </NavLink>{" "}
+                </a>{" "}
                 if you would like to access our SaaS Mode, build, and increase
                 your business freely how ever you want from the ground up. This
                 includes your own website, creating marketing campaigns,
@@ -138,6 +138,7 @@ function Home() {
                 <a
                   href={template.link}
                   className="h-full w-full relative grid place-items-center overflow-hidden isolate group"
+                  target="_blank"
                 >
                   <img
                     src={template.img}

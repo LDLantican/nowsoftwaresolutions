@@ -53,7 +53,7 @@ function Header() {
           </button>
           <nav className="primary-navigation | z-40" data-visible={isShowing}>
             <ul
-              className="nav-list | uppercase rounded-md"
+              className="nav-list | flex flex-col md:flex-row gap-0 md:gap-0 text-center bg-primary-400 md:bg-transparent p-6 uppercase rounded-md"
               aria-label="Primary"
               role="list"
               id="primary-navigation"
@@ -72,8 +72,17 @@ function Header() {
                   path: "/services",
                   dropdown: [
                     {
+                      name: "Silver Plan",
+                      path: "https://nowsoftwaresolutions.memberships.msgsndr.com/offers/bd3ce128-fced-4e6e-a772-0a59f3571a73",
+                      anchor: true,
+                    },
+                    {
+                      name: "Agents Tech Solutions",
+                      path: "/agents-tech-solutions",
+                    },
+                    {
                       name: "Virtual Assisstant Solutions",
-                      path: "/",
+                      path: "/virtual-assisstant-solutions",
                     },
                   ],
                 },
@@ -93,6 +102,18 @@ function Header() {
                   name: "Clients",
                   path: "https://now.nowsoftwaresolutions.com/",
                   anchor: true,
+                  dropdown: [
+                    {
+                      name: "Client Login",
+                      path: "https://now.nowsoftwaresolutions.com/",
+                      anchor: true,
+                    },
+                    {
+                      name: "Subscription/Payment",
+                      path: "https://buy.stripe.com/cN202rbfEahW7jG9AA",
+                      anchor: true,
+                    },
+                  ],
                 },
               ].map((item) => (
                 <CustomNavLink
@@ -112,7 +133,7 @@ function Header() {
           >
             <FontAwesomeIcon
               icon={faPhoneVolume}
-              className="text-primary-400 row-span-full h-full scale-[0.6] group-hover:text-primary-200"
+              className="text-primary-400 row-span-full h-full w-14 aspect-square scale-[0.6] group-hover:text-primary-200"
             />
             <p className="w-max break-keep text-ellipsis">Call Anytime:</p>
             <p className="text-left">334 344 5870</p>

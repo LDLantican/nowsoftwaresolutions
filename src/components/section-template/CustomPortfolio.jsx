@@ -57,7 +57,7 @@ function CustomPortfolio({ link = false, header = "insert header here" }) {
                 className="text-center max-w-[24rem] group"
                 key={crypto.randomUUID()}
               >
-                <a href={work.link}>
+                <a href={work.link} target="_blank">
                   <img
                     src={work.img}
                     alt={`${work.title} website screenshot`}

@@ -10,6 +10,7 @@
 
 :root {
   --clr-primary-400: #b8084b;
+  --clr-primary-200: hsl(337, 92%, 70%);
 
   --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-900: hsl(232, 12%, 13%);
@@ -236,16 +237,6 @@ main > :where(section) {
   display: none;
 }
 
-.nav-list {
-  display: flex;
-}
-.nav-list a {
-  padding: 0.5rem 0.75rem;
-}
-.nav-list a:hover {
-  color: var(--clr-primary-400);
-  background-color: var(--clr-neutral-100);
-}
 @media screen and (max-width: 50em) {
   .primary-navigation {
     display: none;
@@ -254,14 +245,6 @@ main > :where(section) {
     width: min(30rem, 100% - 10rem);
     margin-inline: auto;
     min-height: 100vh;
-  }
-
-  .nav-list {
-    display: grid;
-    gap: 1.5rem;
-    text-align: center;
-    background-color: var(--clr-primary-400);
-    padding-block: 1.5rem;
   }
 
   .main-header:has(.primary-navigation[data-visible="true"]):before {

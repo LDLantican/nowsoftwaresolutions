@@ -8,8 +8,10 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import VirtualAssisstantSolutions from "./pages/VirtualAssisstanSolutions";
 import { Route, Routes } from "react-router-dom";
 import Service from "./components/page-template/Service";
+import AgentsTechSolutions from "./pages/AgentsTechSolutions";
 
 function App() {
   return (
@@ -25,6 +27,14 @@ function App() {
             <Route index element={<Services />} />
             <Route path=":id" element={<Service />} />
           </Route>
+          <Route
+            path="/virtual-assisstant-solutions"
+            element={<VirtualAssisstantSolutions />}
+          />
+          <Route
+            path="/agents-tech-solutions"
+            element={<AgentsTechSolutions />}
+          />
           <Route path="/team" element={<Team />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
